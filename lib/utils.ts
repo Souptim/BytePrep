@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx"
 import { twMerge } from "tailwind-merge"
-import { mappings } from "@/constants";
+import { mappings, interviewCovers } from "@/constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
@@ -21,6 +21,11 @@ const checkIconExists = async (url: string) => {
     return false;
   }
 };
+
+export const getRandomInterviewCover = () => {
+        const randomIndex = Math.floor(Math.random()*interviewCovers.length)
+        return `/covers${interviewCovers[randomIndex]}`;
+    };
 
 export const getTechLogos = async (techArray: string[]) => {
   const logoURLs = techArray.map((tech) => {
