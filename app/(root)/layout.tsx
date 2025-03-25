@@ -1,3 +1,4 @@
+import LogoutButton from '@/components/LogOut'
 import { isAuthenticated } from '@/lib/actions/auth.action'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -14,6 +15,7 @@ const RootLayout = async ({children}: {children: ReactNode}) => {
       <nav>
         <Link href="/" className='flex items-center gap-2'>
           <Image src="/logo.png" alt="Logo" width={150} height={120}/>
+          <LogoutButton/>
         </Link>
       </nav>
       {children}

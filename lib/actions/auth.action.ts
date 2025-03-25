@@ -117,6 +117,12 @@ export async function isAuthenticated() {
 }
 
 export async function getInterviewByUserId(userId: string): Promise<Interview[] | null>{
+    
+    if (!userId) {
+        console.warn("Skipping Firestore query: userId is undefined");
+        return []; 
+      }
+    
     const interviews = await db
     .collection('interviews')
     .where('userId','==',userId)
@@ -131,6 +137,12 @@ export async function getInterviewByUserId(userId: string): Promise<Interview[] 
 export async function getLatestInterviews(params: GetLatestInterviewsParams): Promise<Interview[] | null>{
     
     const { userId, limit = 20} = params;
+    
+    
+    if (!userId) {
+        console.warn("Skipping Firestore query: userId is undefined");
+        return []; 
+      }
     
     const interviews = await db
     .collection('interviews')
