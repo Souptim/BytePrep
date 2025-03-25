@@ -31,6 +31,8 @@ BytePrep is an AI-powered voice-based interview preparation application. It allo
 - Node.js (v18+ recommended)
 - npm or yarn
 - Firebase account setup
+- Gemini setup
+- Vapi ai setup
 
 ### Steps to Run Locally
 
